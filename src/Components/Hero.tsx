@@ -85,18 +85,17 @@ export default function Hero() {
 
                         <div className="text-center flex flex-col items-center">
 
-                            <h1 className="text-balance  tracking-tight text-gray-900 sm:text-7xl bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                                HEY, I'M SARANG A SOFTWARE DEVELOPER
+                            <h1 className="text-balance tracking-tight text-gray-900 sm:text-7xl bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+                                HEY, I&apos;M SARANG A SOFTWARE DEVELOPER
                             </h1>
 
                             <div className="max-w-2xl">
-
                                 <p className="mt-5 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
                                     I am a passionate software developer skilled in designing, coding, and delivering high-quality applications.
                                     With a strong foundation in Full-Stack Development.
                                 </p>
-
                             </div>
+
 
 
                             <div className="flex flex-row items-center justify-center mb-10 w-full mt-3 relative">
