@@ -57,8 +57,17 @@ export default function Hero() {
             image:
                 "/MongoDB-Emblem.jpg",
         },
+
         {
             id: 8,
+            name: "React Query",
+            designation: "",
+            image:
+                "/TanStack.png",
+        },
+
+        {
+            id: 9,
             name: "C++",
             designation: "",
             image:

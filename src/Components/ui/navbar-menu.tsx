@@ -47,7 +47,7 @@ export const MenuItem = ({
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
+                  className="w-max h-full p-4 back"
                 >
                   {children}
                 </motion.div>
@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-zinc-200 border-transparent dark:bg-black backdrop-blur-md dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6  dark:border-zinc-800"
+      className="relative back rounded-full border border-zinc-200 border-transparent dark:bg-black backdrop-blur-md  dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6  dark:border-zinc-800"
     >
       {children}
     </nav>
