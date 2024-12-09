@@ -3,7 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 type Testimonial = {
   quote: string;
@@ -22,31 +22,31 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [randomRotation, setRandomRotation] = useState<number>(0);
 
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-    generateRandomRotation(); // Update rotation on navigation
-  };
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    generateRandomRotation(); // Update rotation on navigation
-  };
-
-  const generateRandomRotation = () => {
+  const generateRandomRotation = useCallback(() => {
     const rotation = Math.floor(Math.random() * 21) - 10; // Random between -10 and 10
     setRandomRotation(rotation);
-  };
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setActive((prev) => (prev + 1) % testimonials.length);
+    generateRandomRotation(); // Update rotation on navigation
+  }, [testimonials.length, generateRandomRotation]);
+
+  const handlePrev = useCallback(() => {
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    generateRandomRotation(); // Update rotation on navigation
+  }, [testimonials.length, generateRandomRotation]);
 
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   useEffect(() => {
     generateRandomRotation(); // Initial random rotation
-  }, []);
+  }, [generateRandomRotation]);
 
   return (
     <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
