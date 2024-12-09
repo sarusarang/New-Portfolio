@@ -1,7 +1,6 @@
 "use client";
 import { HoverEffect } from "./ui/card-hover-effect";
 import BlurFade from './ui/blur-fade';
-import { cn } from '@/lib/utils';
 
 
 export default function Projects() {
