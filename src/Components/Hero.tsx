@@ -1,12 +1,12 @@
 "use client"
-import DotPattern from "./ui/dot-pattern";
+import Particles from "./ui/particles";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export default function Hero() {
 
 
-
+    const [color, setColor] = useState("#ffffff");
 
     const people = [
         {
@@ -119,11 +119,17 @@ export default function Hero() {
                 </div>
 
 
-                <DotPattern
-                    className={cn(
-                        "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]",
-                    )}
+                <Particles
+                    className="absolute inset-0"
+                    quantity={200}
+                    staticity={100}
+                    ease={80}
+                    color={color}
+                    refresh
                 />
+
+
+              
 
             </section >
 
